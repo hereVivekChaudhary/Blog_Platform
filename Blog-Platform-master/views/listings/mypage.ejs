@@ -1,0 +1,26 @@
+<% layout("/layouts/boilerplate")%>
+<body style="background-color: #f7f7f7; font-family: Arial, sans-serif;">
+    <header style="background-color: #423b3b; color: #746969; padding: 20px; text-align: center;">
+        <h1>Mr.<%=currUser.username %></h1>
+    </header>
+    <div class="container" style="max-width: 800px; margin: 40px auto; padding: 20px; background-color: #fff; border: 1px solid #ddd; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+        <h2 style="margin-bottom: 20px;">Your Blog Posts</h2>
+
+        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1" >
+            <% for(listing of listings){%>
+                <div class="col">
+                    <a href="/listing/<%=listing._id%>" class="list-link">
+                        <div class="card listing-card" style="border: none; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+                            <img src="<%=listing.image.url%>" class="card-img-top" alt="Listing Image" style="height: 200px; object-fit: cover; border-radius: 10px 10px 0 0;">
+                            <div class="card-body" style="padding: 20px;">
+                                <h5 class="card-title" style="margin-bottom: 10px;"><%=listing.title%></h5>
+                                <p class="card-text" style="color: #666;"><% listing.description %></p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            <%}%>
+        </div>
+    </div>
+</body>
+</html>

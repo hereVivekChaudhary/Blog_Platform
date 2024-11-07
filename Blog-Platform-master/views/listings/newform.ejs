@@ -1,0 +1,78 @@
+<% layout("/layouts/boilerplate")%>
+<body>
+  <div class="row">
+    <div class="col-8 offset-2">
+      <br /><br />
+      <h1>ADD NEW BLOG</h1>
+      <form
+        action="/listings/new/add"
+        method="post"
+        
+        validate
+        enctype="multipart/form-data"
+      >
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input
+            type="text"
+            name="title"
+            id=""
+            class="form-control"
+            placeholder="title"
+            
+          />
+        </div>
+        <div class="mb-3">
+          <label for="location" class="form-label">Location</label>
+          <input
+            type="text"
+            name="location"
+            id=""
+            class="form-control"
+            placeholder="location"
+            required
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <input
+            type="text"
+            name="description"
+            id=""
+            class="form-control"
+            placeholder="description"
+            required
+          />
+         
+        </div>
+
+          <div class="mb-3 col-md-8">
+            <label for="country" class="form-label">Country</label>
+            <input
+              type="text"
+              name="country"
+              id=""
+              class="form-control"
+              placeholder="country"
+              required
+            />
+            
+        </div>
+
+        <div class="mb-3">
+          <label for="image" class="form-label">Upload Image</label>
+          <input
+            type="file"
+            name="image"
+            id=""
+            class="form-control"
+          />
+        </div>
+
+        <button class="mb-3 btn btn-dark add-btn">Submit</button>
+        <br /><br />
+      </form>
+    </div>
+  </div>
+</body>
